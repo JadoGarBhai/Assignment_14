@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./script.js"></script>
+</head>
+<body>
+    <main>
+        <div class="normal-calculator">
+            <!-- <div class="container"> -->
+                <div class="nav-bar">
+                    <img src="./assests/converter.png" alt="converter">
+                </div>
+
+                <input type="text" readonly placeholder="Result" id="result">
+            <!-- </div> -->
+
+            <div class="button-section">
+                <div class="group-1">
+                    <div class="rectangular-2">
+                        <div class="rectangular-3">
+                            <div class="rectangular-1">
+                                <div class="btns">
+                                    <div class="row-1">
+                                        <button onclick="clearResult('')">CE</button>
+                                        <div class="bracets">
+                                            <button onclick="appendNumber( '(' )">(</button>
+                                            <button onclick="appendNumber( ')' )">)</button>
+                                        </div>
+                                        <button onclick="calculatePercentage()">%</button>
+                                        <button onclick="appendOperator('/')">÷</button>
+                                    </div>
+
+                                    <div class="row-1">
+                                        <div class="bar-1">
+                                            <button onclick="appendNumber(7)">7</button>
+                                            <button onclick="appendNumber(8)">8</button>
+                                            <button onclick="appendNumber(9)">9</button>
+                                        </div>
+
+                                        <button onclick="appendOperator('*')">×</button>
+                                    </div>
+
+                                    <div class="row-1">
+                                        <div class="bar-1">
+                                            <button onclick="appendNumber(4)">4</button>
+                                            <button onclick="appendNumber(5)">5</button>
+                                            <button onclick="appendNumber(6)">6</button>
+                                        </div>
+
+                                        <button onclick="appendOperator('-')">-</button>
+                                    </div>
+
+                                    <div class="row-1">
+                                        <div class="bar-1">
+                                            <button onclick="appendNumber(1)">1</button>
+                                            <button onclick="appendNumber(2)">2</button>
+                                            <button onclick="appendNumber(3)">3</button>
+                                        </div>
+
+                                        <button onclick="appendOperator('+')">+</button>
+                                    </div>
+
+                                    <div class="row-1">
+                                        <div class="bar-1">
+                                            <button onclick="appendNumber('.')">●</button>
+                                            <button onclick="appendNumber(0)">0</button>
+                                            <button onclick="appendNumber('00')">00</button>
+                                        </div>
+
+                                        <button class="equal" onclick="calculate()" style="background-color: #FF0000; border-radius: 50px; height: 60px; width: 60px;">=</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scientific-calculator">
+            
+        </div>
+    </main>
+</body>
+</html>
