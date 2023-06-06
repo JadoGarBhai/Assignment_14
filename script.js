@@ -14,6 +14,12 @@ function clearResult() {
     document.getElementById("result_02").value = "";
 }
 
+                    //Function to Delete One Number
+function delResult() {
+    document.getElementById('result_01').value = document.getElementById('result_01').value.slice(0, -1);
+}
+
+
                     // Functions to Calculate Percentage.
 function calculatePercentage() {
     let result = document.getElementById("result_01").value;
@@ -42,21 +48,28 @@ function calculate() {
 }
 
                     // Function for Toggle.
-function toggleMode() {
-    const body = document.querySelector('body');
-    body.classList.toggle('scientific-calculator');
-                        
-    const toggleButton = document.getElementById('toggle-button');
-    if (body.classList.contains('scientific-calculator')) {
-        document.getElementsByClassName('scientific-calculator').remove(style.display);
+function slider() {
+    let scientificCalc = document.querySelector('.scientific-calculator');
+    let buttonSection = document.querySelector('.button-section');
+    let img = document.querySelector('.nav-bar img');
+    let result1 = document.getElementById('result_01');
+    let result2 = document.getElementById('result_02');
+
+    if (scientificCalc.classList.contains('hidden')) {
+        // Show scientific calculator and change the image
+        scientificCalc.classList.remove('hidden');
+        buttonSection.classList.add('hidden');
+        img.src = './assests/converter_01.png';
+        img.style.height = '30px';
+        result1.style.height = '81px';
+        result2.style.height = '81px';
     } else {
-        toggleButton.body.classList = 'button-section';
+        // Show button section and change the image back
+        buttonSection.classList.remove('hidden');
+        scientificCalc.classList.add('hidden');
+        img.src = './assests/converter.png';
+        img.style.height = '25px';
+        result1.style.height = '120px';
+        result2.style.height = '120px';
     }
 }
-
-// [ 
-//     let result1 = document.getElementById('result_01');
-//         result1.style.height = '70px';
-//     let result2 = document.getElementById('result_02');
-//         result2.style.height = '70px';
-// ]
