@@ -52,7 +52,7 @@ function valueOfSin() {
 function calculateSin() {
     let result1 = document.getElementById('result_01').value;
     let slice = result1.slice(4, -1);
-    let sin = Math.sin(slice * (Math.PI / 180));
+    let sin = Math.sin(slice * (Math.PI / 180)).toFixed(4);
     return sin;
 }
 function calculateCos() {
@@ -118,14 +118,17 @@ function slider() {
 
                         // Functions to Calculate Result (Eval).
 function calculate() {
-let result = document.getElementById("result_01").value;
-
-try {
-let answer = eval(result);
-document.getElementById("result_02").value = answer;
-} catch (error) {
-console.log("error : " + error);
-document.getElementById("result_02").value = "Masti kr rya";
-}
-
+    let result = document.getElementById('result_01').value;
+    try {
+        let answer = eval(result);
+        document.getElementById('result_02').value = answer;
+    } catch (error) {
+        console.log('error: ' + error);
+        document.getElementById('result_02').value = 'Error';
+    }
+    
+    if (result.includes('Sin(')) {
+        let answer = calculateSin();
+        document.getElementById('result_02').value = answer;
+    }
 }
