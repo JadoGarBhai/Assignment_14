@@ -24,8 +24,10 @@ body{
 .nav-bar > button{
     width: 25px;
     font-size: larger;
+    color: #ffffff;
     background: none;
     border-style: none;
+    cursor: pointer;
 }
 
 .container{
