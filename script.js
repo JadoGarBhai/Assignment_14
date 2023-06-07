@@ -21,45 +21,54 @@ function delResult() {
 
                     // Function to Calculate Square Root.
 function sqrRoot() {
-    document.getElementById("result_01").value = Math.sqrt(result.value).toFixed(4);
+    let answer = Math.sqrt;
+    return answer;
 }
 
                     // Function to Calculate Log.
 function calculateLog() {
-    let result = document.getElementById("result_01").value;
-
-    try {
-        let answer = eval(result + 'Math.log10');
-        document.getElementById("result_02").value = answer;
-    } catch (error) {
-        console.log("error : " + error);
-        document.getElementById("result_02").value = "Masti kr rya";
-    }
+    let answer = Math.log10;
+    return answer;
 }
 
                     // Function to Calculate Ln.
 function calculateLn() {
-    document.getElementById("result").value = Math.log(result.value).toFixed(4);
+    let answer = Math.log;
+    return answer;
+}
+
+                    // Functions to Calculate Percentage.
+function calculatePercentage() {
+let result = document.getElementById("result_01").value;
+let answer = (result + "/100");
+return answer;
 }
 
                     // Alert and Value.
 function valueOfSin() {
     appendNumber('Sin(');
-    alert("Please make sure to close the bracket after entering the value.");
+    alert("Please make sure to close the bracket after entering the value. For Example: Sin(45)");
 }
+
 
                     // Functions to Calculate Trigonometric Values. 
 function calculateSin() {
-    let result1 = document.getElementById('result_01').value;
     let slice = result1.slice(4, -1);
+    let result1 = document.getElementById('result_01').value;
     let sin = Math.sin(slice * (Math.PI / 180)).toFixed(4);
     return sin;
 }
 function calculateCos() {
-    
+    let result1 = document.getElementById('result_01').value;
+    let slice = result1.slice(4, -1);
+    let cos = Math.cos(slice * (Math.PI / 180)).toFixed(4);
+    return cos;
 }
 function calculateTan() {
-    
+    let result1 = document.getElementById('result_01').value;
+    let slice = result1.slice(4, -1);
+    let tan = Math.tan(slice * (Math.PI / 180)).toFixed(4);
+    return tan;
 }
 
                     // Functions to Calculate Inverse Trigonometric Values.
@@ -70,28 +79,20 @@ function calculateSinInverse() {
     return sinInverse;
 }
 function calculateCosInverse() {
-   
+    let result1 = document.getElementById('result_01').value;
+    let slice = result1.slice(4, -1);
+    let cosInverse = 1 / (1 / (Math.sin(slice * (Math.PI / 180))));
+    return cosInverse;
 }
 function calculateTanInverse() {
-    
+    let result1 = document.getElementById('result_01').value;
+    let slice = result1.slice(4, -1);
+    let tanInverse = 1 / (1 / (Math.sin(slice * (Math.PI / 180))));
+    return tanInverse;
 }
 
 
-                    // Functions to Calculate Percentage.
-function calculatePercentage() {
-    let result = document.getElementById("result_01").value;
-
-    try {
-        let answer = eval(result + "/100");
-        document.getElementById("result_02").value = answer;
-    } catch (error) {
-        console.log("error : " + error);
-        document.getElementById("result_02").value = "Masti kr rya";
-    }
-}
-
-
-// Function for Toggle.
+                    // Function for Toggle.
 function slider() {
     let scientificCalc = document.querySelector('.scientific-calculator');
     let buttonSection = document.querySelector('.button-section');
