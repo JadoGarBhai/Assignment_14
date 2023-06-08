@@ -40,7 +40,7 @@
                                             <button onclick="appendNumber( '(' )">(</button>
                                             <button onclick="appendNumber( ')' )">)</button>
                                         </div>
-                                        <button onclick="calculatePercentage()">%</button>
+                                        <button onclick="valueOfPercentage()">%</button>
                                         <button onclick="appendOperator('/')">÷</button>
                                     </div>
 
@@ -99,18 +99,18 @@
                             <div class="rectangular-01">
                                 <div class="row-1">
                                     <button onclick="clearResult('')">CE</button>
-                                    <button onclick="calculateLog()">lg</button>
-                                    <button onclick="calculateLn()">ln</button>
+                                    <button onclick="valueOfLog()">lg</button>
+                                    <button onclick="valueOfLn()">ln</button>
                                     <button onclick="appendNumber(3.14159)">π</button>
                                 </div>
     
                                 <div class="row-1">
-                                    <button onclick="sqrRoot()">√</button>
+                                    <button onclick="valueOfSqrRoot()">√</button>
                                     <div class="brackets">
                                         <button onclick="appendNumber( '(' )">(</button>
                                         <button onclick="appendNumber( ')' )">)</button>
                                     </div>
-                                    <button onclick="calculatePercentage()">%</button>
+                                    <button onclick="valueOfPercentage()">%</button>
                                     <button onclick="appendOperator('/')">÷</button>
                                 </div>
     
@@ -146,12 +146,12 @@
                                     <button onclick="appendOperator('-')">-</button>
                                 </div>
                                 <div class="row-1">
-                                    <button onclick="calCos()">cos</button>
+                                    <button onclick="valueOfCos()">cos</button>
                                     <button onclick="appendOperator('+')">+</button>
                                 </div>
     
                                 <div class="row-1">
-                                    <button onclick="calTan()">tan</button>
+                                    <button onclick="valueOfTan()">tan</button>
                                     <button onclick="appendNumber(2.7183)">e</button>
                                     <button>Inv</button>
                                     <button class="equal" onclick="calculate()" style="background-color: #FF0000; border-radius: 50px; height: 60px; width: 60px;">=</button>
@@ -162,9 +162,6 @@
                 </div>
             </div>
         </div>
-
-
-
     </main>
 </body>
 </html>
