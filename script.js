@@ -19,42 +19,90 @@ function delResult() {
     document.getElementById('result_01').value = document.getElementById('result_01').value.slice(0, -1);
 }
 
+                    // Show of Values
+function valueOfSqrRoot() {
+    appendNumber('√');
+}
+
+                    // Log 10
+function valueOfLog() {
+    appendNumber('lg(');
+    alert("Please make sure to close the bracket after entering the value. For Example: lg(00)");
+}
+
+                    // Ln Function for Value.
+function valueOfLn() {
+    appendNumber('ln(');
+    alert("Please make sure to close the bracket after entering the value. For Example: ln(00)");
+}
+
+                    // Percentage Value.
+function valueOfPercentage() {
+    appendNumber('%');
+}
+
                     // Function to Calculate Square Root.
-function sqrRoot() {
-    let answer = Math.sqrt;
-    return answer;
+function calculateSqrRoot() {
+    let result1 = document.getElementById('result_01').value;
+    let parse = result1.slice(1);
+    let sr = Math.sqrt(parse).toFixed(4);
+    return sr;
 }
 
                     // Function to Calculate Log.
 function calculateLog() {
-    let answer = Math.log10;
-    return answer;
+    let result1 = document.getElementById('result_01').value;
+    let parse = result1.slice(3, -1);
+    let lg = Math.log10(parse).toFixed(4);
+    return lg;
 }
 
                     // Function to Calculate Ln.
 function calculateLn() {
-    let answer = Math.log;
-    return answer;
+    let result1 = document.getElementById('result_01').value;
+    let parse = result1.slice(3, -1);
+    let ln = Math.log(parse).toFixed(4);
+    return ln;
 }
 
                     // Functions to Calculate Percentage.
 function calculatePercentage() {
-let result = document.getElementById("result_01").value;
-let answer = (result + "/100");
+let result1 = document.getElementById("result_01").value;
+let result = parseFloat(result1);
+let answer = (result / 100);
 return answer;
 }
 
-                    // Alert and Value.
+                    // Alert and Trigonometric Value.
 function valueOfSin() {
     appendNumber('Sin(');
     alert("Please make sure to close the bracket after entering the value. For Example: Sin(45)");
 }
-
+function valueOfCos() {
+    appendNumber('Cos(');
+    alert("Please make sure to close the bracket after entering the value. For Example: Cos(45)");
+}
+function valueOfTan() {
+    appendNumber('Tan(');
+    alert("Please make sure to close the bracket after entering the value. For Example: Tan(45)");
+}
+function valueOfSinInv() {
+    appendNumber('arcsin(');
+    alert("Please make sure to close the bracket after entering the value. For Example: arcsin(45)");
+}
+function valueOfCosInv() {
+    appendNumber('arccos(');
+    alert("Please make sure to close the bracket after entering the value. For Example: arccos(45)");
+}
+function valueOfTanInv() {
+    appendNumber('arctan(');
+    alert("Please make sure to close the bracket after entering the value. For Example: arctan(45)");
+}
 
                     // Functions to Calculate Trigonometric Values. 
 function calculateSin() {
-    let slice = result1.slice(4, -1);
     let result1 = document.getElementById('result_01').value;
+    let slice = result1.slice(4, -1);
     let sin = Math.sin(slice * (Math.PI / 180)).toFixed(4);
     return sin;
 }
@@ -130,6 +178,33 @@ function calculate() {
     
     if (result.includes('Sin(')) {
         let answer = calculateSin();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('Cos(')) {
+        let answer = calculateCos();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('Tan(')) {
+        let answer = calculateTan();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('arcsin')) {
+        let answer = calculateSinInverse();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('arccos(')) {
+        let answer = calculateCosInverse();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('arctan(')) {
+        let answer = calculateTanInverse();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('√')) {
+        let answer = calculateSqrRoot();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('lg(')) {
+        let answer = calculateLog();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('ln(')) {
+        let answer = calculateLn();
+        document.getElementById('result_02').value = answer;
+    }else if (result.includes('%')) {
+        let answer = calculatePercentage();
         document.getElementById('result_02').value = answer;
     }
 }
