@@ -122,20 +122,20 @@ function calculateTan() {
                     // Functions to Calculate Inverse Trigonometric Values.
 function calculateSinInverse() {
     let result1 = document.getElementById('result_01').value;
-    let slice = result1.slice(4, -1);
-    let sinInverse = 1 / (1 / (Math.sin(slice * (Math.PI / 180))));
+    let slice = result1.slice(7, -1);
+    let sinInverse = Math.asin(slice).toFixed(4);
     return sinInverse;
 }
 function calculateCosInverse() {
     let result1 = document.getElementById('result_01').value;
-    let slice = result1.slice(4, -1);
-    let cosInverse = 1 / (1 / (Math.sin(slice * (Math.PI / 180))));
+    let slice = result1.slice(7, -1);
+    let cosInverse = Math.acos(slice).toFixed(4);
     return cosInverse;
 }
 function calculateTanInverse() {
     let result1 = document.getElementById('result_01').value;
-    let slice = result1.slice(4, -1);
-    let tanInverse = 1 / (1 / (Math.sin(slice * (Math.PI / 180))));
+    let slice = result1.slice(7, -1);
+    let tanInverse = Math.atan(slice).toFixed(4);
     return tanInverse;
 }
 
@@ -165,46 +165,86 @@ function slider() {
     }
 }
 
+function slider1() {
+    let a1 = document.getElementById('01');
+    let a2 = document.getElementById('02');
+    let a3 = document.getElementById('03');
+    let c1 = [a1, a2, a3];
+    let b1 = document.getElementById('1');
+    let b2 = document.getElementById('2');
+    let b3 = document.getElementById('3');
+    let d1 = [b1, b2, b3];
+
+    if (c1[0].classList.contains('h')) {
+        c1[0].classList.remove('h');
+        c1[1].classList.remove('h');
+        c1[2].classList.remove('h');
+        d1[0].classList.add('h');
+        d1[1].classList.add('h');
+        d1[2].classList.add('h');
+    } else {
+        c1[0].classList.add('h');
+        c1[1].classList.add('h');
+        c1[2].classList.add('h');
+        d1[0].classList.remove('h');
+        d1[1].classList.remove('h');
+        d1[2].classList.remove('h');
+    }
+}
+
                         // Functions to Calculate Result (Eval).
 function calculate() {
     let result = document.getElementById('result_01').value;
+    let answer;
+
     try {
-        let answer = eval(result);
+        answer = eval(result);
         document.getElementById('result_02').value = answer;
     } catch (error) {
         console.log('error: ' + error);
         document.getElementById('result_02').value = 'Error';
     }
-    
-    if (result.includes('Sin(')) {
-        let answer = calculateSin();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('Cos(')) {
-        let answer = calculateCos();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('Tan(')) {
-        let answer = calculateTan();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('arcsin')) {
-        let answer = calculateSinInverse();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('arccos(')) {
-        let answer = calculateCosInverse();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('arctan(')) {
-        let answer = calculateTanInverse();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('√')) {
-        let answer = calculateSqrRoot();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('lg(')) {
-        let answer = calculateLog();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('ln(')) {
-        let answer = calculateLn();
-        document.getElementById('result_02').value = answer;
-    }else if (result.includes('%')) {
-        let answer = calculatePercentage();
-        document.getElementById('result_02').value = answer;
+
+    switch (true) {
+        case result.includes('Sin('):
+            answer = calculateSin();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('Cos('):
+            answer = calculateCos();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('Tan('):
+            answer = calculateTan();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('arcsin('):
+            answer = calculateSinInverse();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('arccos('):
+            answer = calculateCosInverse();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('arctan('):
+            answer = calculateTanInverse();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('√'):
+            answer = calculateSqrRoot();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('lg('):
+            answer = calculateLog();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('ln('):
+            answer = calculateLn();
+            document.getElementById('result_02').value = answer;
+        break;
+        case result.includes('%'):
+            answer = calculatePercentage();
+            document.getElementById('result_02').value = answer;
+        break;
     }
 }

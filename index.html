@@ -89,9 +89,8 @@
                     </div>
                 </div>
             </div>
-
-
-
+            
+                    <!-- Scientific-Calculator -->
             <div class="scientific-calculator hidden">
                 <div class="button-section-2">
                     <div class="rectangular-02">
@@ -142,18 +141,21 @@
                                 </div>
     
                                 <div class="row-1">
-                                    <button onclick="valueOfSin()">sin</button>
+                                    <button onclick="valueOfSin()" id="1">sin</button>
+                                    <button onclick="valueOfSinInv()" class="h" id="01">sin<sup>-1</sup></button>
                                     <button onclick="appendOperator('-')">-</button>
                                 </div>
                                 <div class="row-1">
-                                    <button onclick="valueOfCos()">cos</button>
+                                    <button onclick="valueOfCos()" id="2">cos</button>
+                                    <button onclick="valueOfCosInv()" class="h" id="02">cos<sup>-1</sup></button>
                                     <button onclick="appendOperator('+')">+</button>
                                 </div>
     
                                 <div class="row-1">
-                                    <button onclick="valueOfTan()">tan</button>
+                                    <button onclick="valueOfTan()" id="3">tan</button>
+                                    <button onclick="valueOfTanInv()" class="h" id="03">tan<sup>-1</sup></button>
                                     <button onclick="appendNumber(2.7183)">e</button>
-                                    <button>Inv</button>
+                                    <button onclick="slider1()">Inv</button> 
                                     <button class="equal" onclick="calculate()" style="background-color: #FF0000; border-radius: 50px; height: 60px; width: 60px;">=</button>
                                 </div>
                             </div>
