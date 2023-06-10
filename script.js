@@ -79,7 +79,7 @@ function valueOfPercentage() {
 function calculateSqrRoot() {
     let result1 = document.getElementById('result_01').value;
     let parse = result1.slice(1);
-    let sr = Math.sqrt(parse).toFixed(4);
+    let sr = Math.sqrt(parse);
     return sr;
 }
 
