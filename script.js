@@ -1,11 +1,45 @@
                     // Function to Enter Number.
 function appendNumber(num) {
-    document.getElementById("result_01").value += num;
+  let display = document.getElementById("result_01");
+  let currentValue = display.value;
+
+  if (num === '.' && currentValue.includes('.')) return;
+
+  let newValue = currentValue.toString() + num.toString();
+  display.value = newValue;
 }
                     
                     // Function to Perform Operator. 
+function replaceArithmeticOperator(str) {
+    let operators = ['+', '-', '*', '/'];
+
+    if (str.length < 2) {
+      return str;
+    }
+
+    let lastChar = str[str.length - 1];
+    if (operators.includes(lastChar)) {
+            let lastIndex = -1;
+
+        for (let i = str.length - 2; i >= 0; i--) {
+            if (operators.includes(str[i])) {
+                lastIndex = i;
+                break;
+            }
+        }
+
+        if (lastIndex !== -1) {
+            str = str.slice(0, lastIndex) + lastChar;
+        }
+    }
+
+    return str;
+}
+
 function appendOperator(op) {
-    document.getElementById("result_01").value += op;
+    let display = document.getElementById("result_01").value += op;
+    let result = replaceArithmeticOperator(display);
+    document.getElementById("result_01").value = result;
 }
 
                     // Function to Clear Screen.
