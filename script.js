@@ -11,7 +11,7 @@ function appendNumber(num) {
                     
                     // Function to Perform Operator. 
 function replaceArithmeticOperator(str) {
-    let operators = ['+', '-', '*', '/'];
+    let operators = ['+', '-', '*', '/', '%'];
 
     if (str.length < 2) {
       return str;
